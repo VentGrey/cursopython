@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Curso Python | FutureLab</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'core/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'core/css/modern-business.css' %}" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <!-- Page Heading/Breadcrumbs -->
+      <h1 class="mt-2 mb-2"> Curso Python
+        <h3><small>Cristofer Nava <b>cj.carmonanava@ugto.mx</b></small></h3>
+      </h1>
+
+      <!-- Image Header -->
+      {% for image in images %}
+      <img class="img-fluid rounded mb-4" src="{{image.image.url}}" alt="">
+      {% endfor %}
+
+      <!-- Cards -->
+      {% for homework in homeworks %}
+      <div class="row">
+        <div class="col-lg-12 mb-4">
+          <div class="card h-100">
+            <h4 class="card-header">{{homework.title}}</h4>
+            <div class="card-body">
+              <p class="card-text">{{homework.description}}</p>
+            </div>
+            <div class="card-footer">
+              <a href="{{homework.notes.url}}" class="btn btn-primary">Apuntes de la clase</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+  </body>
+
+</html>
